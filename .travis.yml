@@ -23,8 +23,8 @@ before_script:
     fi
   - phpenv config-rm xdebug.ini || echo "XDebug not enabled"
   - yes no | pecl install channel://pecl.php.net/lzf
-  - pear install channel://pear.horde.org/Horde_Role
   - pecl install channel://pear.horde.org/horde_lz4
+  - pear install channel://pear.horde.org/Horde_Test
   - pear install package.xml
 script:
   - php $(find test -name AllTests.php)
