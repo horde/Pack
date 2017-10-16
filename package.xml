@@ -10,7 +10,7 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2016-12-16</date>
+ <date>2017-10-17</date>
  <version>
   <release>1.0.8</release>
   <api>1.0.0</api>
@@ -25,13 +25,6 @@
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <dir name="doc">
-    <dir name="Horde">
-     <dir name="Pack">
-      <file name="COPYING" role="doc" />
-     </dir> <!-- /doc/Horde/Pack -->
-    </dir> <!-- /doc/Horde -->
-   </dir> <!-- /doc -->
    <dir name="lib">
     <dir name="Horde">
      <dir name="Pack">
@@ -68,6 +61,7 @@
      </dir> <!-- /test/Horde/Pack -->
     </dir> <!-- /test/Horde -->
    </dir> <!-- /test -->
+   <file name="LICENSE" role="doc" />
   </dir> <!-- / -->
  </contents>
  <dependencies>
@@ -121,27 +115,27 @@
  </dependencies>
  <phprelease>
   <filelist>
-   <install as="COPYING" name="doc/Horde/Pack/COPYING" />
    <install as="Horde/Pack.php" name="lib/Horde/Pack.php" />
    <install as="Horde/Pack/Autodetermine.php" name="lib/Horde/Pack/Autodetermine.php" />
    <install as="Horde/Pack/Driver.php" name="lib/Horde/Pack/Driver.php" />
-   <install as="Horde/Pack/Exception.php" name="lib/Horde/Pack/Exception.php" />
    <install as="Horde/Pack/Driver/Igbinary.php" name="lib/Horde/Pack/Driver/Igbinary.php" />
    <install as="Horde/Pack/Driver/Json.php" name="lib/Horde/Pack/Driver/Json.php" />
    <install as="Horde/Pack/Driver/Msgpack.php" name="lib/Horde/Pack/Driver/Msgpack.php" />
    <install as="Horde/Pack/Driver/Msgpackserialize.php" name="lib/Horde/Pack/Driver/Msgpackserialize.php" />
    <install as="Horde/Pack/Driver/Serialize.php" name="lib/Horde/Pack/Driver/Serialize.php" />
+   <install as="Horde/Pack/Exception.php" name="lib/Horde/Pack/Exception.php" />
+   <install as="LICENSE" name="LICENSE" />
    <install as="Horde/Pack/AllTests.php" name="test/Horde/Pack/AllTests.php" />
    <install as="Horde/Pack/AutodetermineTest.php" name="test/Horde/Pack/AutodetermineTest.php" />
    <install as="Horde/Pack/bootstrap.php" name="test/Horde/Pack/bootstrap.php" />
-   <install as="Horde/Pack/PackTest.php" name="test/Horde/Pack/PackTest.php" />
-   <install as="Horde/Pack/phpunit.xml" name="test/Horde/Pack/phpunit.xml" />
    <install as="Horde/Pack/Driver/IgbinaryTest.php" name="test/Horde/Pack/Driver/IgbinaryTest.php" />
    <install as="Horde/Pack/Driver/JsonTest.php" name="test/Horde/Pack/Driver/JsonTest.php" />
    <install as="Horde/Pack/Driver/MsgpackserializeTest.php" name="test/Horde/Pack/Driver/MsgpackserializeTest.php" />
    <install as="Horde/Pack/Driver/MsgpackTest.php" name="test/Horde/Pack/Driver/MsgpackTest.php" />
    <install as="Horde/Pack/Driver/SerializeTest.php" name="test/Horde/Pack/Driver/SerializeTest.php" />
    <install as="Horde/Pack/Driver/TestBase.php" name="test/Horde/Pack/Driver/TestBase.php" />
+   <install as="Horde/Pack/PackTest.php" name="test/Horde/Pack/PackTest.php" />
+   <install as="Horde/Pack/phpunit.xml" name="test/Horde/Pack/phpunit.xml" />
   </filelist>
  </phprelease>
  <changelog>
@@ -258,7 +252,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2016-12-16</date>
+   <date>2017-10-17</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * 
