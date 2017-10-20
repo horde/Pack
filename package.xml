@@ -10,7 +10,7 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2017-10-17</date>
+ <date>2017-10-20</date>
  <version>
   <release>1.0.8</release>
   <api>1.0.0</api>
@@ -57,7 +57,6 @@
       <file name="AutodetermineTest.php" role="test" />
       <file name="bootstrap.php" role="test" />
       <file name="PackTest.php" role="test" />
-      <file name="phpunit.xml" role="test" />
      </dir> <!-- /test/Horde/Pack -->
     </dir> <!-- /test/Horde -->
    </dir> <!-- /test -->
@@ -135,7 +134,6 @@
    <install as="Horde/Pack/Driver/SerializeTest.php" name="test/Horde/Pack/Driver/SerializeTest.php" />
    <install as="Horde/Pack/Driver/TestBase.php" name="test/Horde/Pack/Driver/TestBase.php" />
    <install as="Horde/Pack/PackTest.php" name="test/Horde/Pack/PackTest.php" />
-   <install as="Horde/Pack/phpunit.xml" name="test/Horde/Pack/phpunit.xml" />
   </filelist>
  </phprelease>
  <changelog>
@@ -252,7 +250,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2017-10-17</date>
+   <date>2017-10-20</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * 
