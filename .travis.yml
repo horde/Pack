@@ -21,11 +21,6 @@ before_script:
     fi
   - phpenv config-rm xdebug.ini || echo "XDebug not enabled"
   - yes no | pecl install channel://pecl.php.net/lzf
-  - if [ "$TRAVIS_PHP_VERSION" == "5.6" ] || [ "$TRAVIS_PHP_VERSION" == "7.0" ];
-    then
-      pear channel-discover pear.horde.org;
-      echo "include_path = .:$HOME/.phpenv/versions/$(phpenv version-name)/lib/php/pear" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini;
-    fi
   - pecl install channel://pear.horde.org/horde_lz4
   - pear install channel://pear.horde.org/Horde_Test
   - pear install -a -B package.xml
