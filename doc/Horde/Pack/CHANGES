@@ -1,0 +1,60 @@
+----------
+v1.0.8-git
+----------
+
+
+------
+v1.0.7
+------
+
+[jan] Avoid notice if packing an invalid UTF-8 string (Bug #14522).
+
+
+------
+v1.0.6
+------
+
+[jan] Mark PHP 7 as supported.
+
+
+------
+v1.0.5
+------
+
+[mms] Catch unknown errors when unpacking data.
+
+
+------
+v1.0.4
+------
+
+[mms] Re-enable igbinary driver (requires igbinary >= 1.2.0).
+
+
+------
+v1.0.3
+------
+
+[mms] Attempt to workaround broken JSON-C decoder regarding null characters.
+
+
+------
+v1.0.2
+------
+
+[mms] Don't use JSON driver to pack if input contains non-UTF8 data (Bug
+      #13275).
+
+
+------
+v1.0.1
+------
+
+[mms] Due to issues with igbinary 1.1.1, disable the igbinary driver.
+
+
+------
+v1.0.0
+------
+
+[mms] Initial release.

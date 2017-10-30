@@ -10,7 +10,7 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2016-12-16</date>
+ <date>2017-10-30</date>
  <version>
   <release>1.0.8</release>
   <api>1.0.0</api>
@@ -28,6 +28,7 @@
    <dir name="doc">
     <dir name="Horde">
      <dir name="Pack">
+      <file name="CHANGES" role="doc" />
       <file name="COPYING" role="doc" />
      </dir> <!-- /doc/Horde/Pack -->
     </dir> <!-- /doc/Horde -->
@@ -121,6 +122,7 @@
  </dependencies>
  <phprelease>
   <filelist>
+   <install as="CHANGES" name="doc/Horde/Pack/CHANGES" />
    <install as="COPYING" name="doc/Horde/Pack/COPYING" />
    <install as="Horde/Pack.php" name="lib/Horde/Pack.php" />
    <install as="Horde/Pack/Autodetermine.php" name="lib/Horde/Pack/Autodetermine.php" />
@@ -258,7 +260,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2016-12-16</date>
+   <date>2017-10-30</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * 
