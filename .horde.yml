@@ -32,7 +32,11 @@ dependencies:
   optional:
     pear:
       pear.horde.org/Horde_Test: ^2
-      pecl.php.net/igbinary: ^1.2
-      pecl.php.net/msgpack: '*'
+      pecl.php.net/igbinary:
+        version: ^1.2
+        providesextension: igbinary
+      pecl.php.net/msgpack:
+        version: '*'
+        providesextension: msgpack
     ext:
       json: '*'
