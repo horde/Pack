@@ -65,7 +65,6 @@
       <file name="AutodetermineTest.php" role="test" />
       <file name="bootstrap.php" role="test" />
       <file name="PackTest.php" role="test" />
-      <file name="phpunit.xml" role="test" />
      </dir> <!-- /test/Horde/Pack -->
     </dir> <!-- /test/Horde -->
    </dir> <!-- /test -->
@@ -139,7 +138,6 @@
    <install as="Horde/Pack/AutodetermineTest.php" name="test/Horde/Pack/AutodetermineTest.php" />
    <install as="Horde/Pack/bootstrap.php" name="test/Horde/Pack/bootstrap.php" />
    <install as="Horde/Pack/PackTest.php" name="test/Horde/Pack/PackTest.php" />
-   <install as="Horde/Pack/phpunit.xml" name="test/Horde/Pack/phpunit.xml" />
    <install as="Horde/Pack/Driver/IgbinaryTest.php" name="test/Horde/Pack/Driver/IgbinaryTest.php" />
    <install as="Horde/Pack/Driver/JsonTest.php" name="test/Horde/Pack/Driver/JsonTest.php" />
    <install as="Horde/Pack/Driver/MsgpackserializeTest.php" name="test/Horde/Pack/Driver/MsgpackserializeTest.php" />
