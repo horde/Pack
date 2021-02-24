@@ -34,9 +34,6 @@
     "autoload": {
         "psr-0": {
             "Horde_Pack": "lib/"
-        },
-        "psr-4": {
-            "Horde\\Pack\\": "src/"
         }
     }
 }
