@@ -3,8 +3,8 @@ id: Pack
 name: Pack
 full: Data packing library
 description: >-
-  A replacement library for serialize()/json_encode() that will automatically use the
-  most efficient serialization available based on the input.
+  A replacement library for serialize()/json_encode() that will automatically
+  use the most efficient serialization available based on the input.
 list: dev
 type: library
 authors:
@@ -15,11 +15,11 @@ authors:
     active: false
     role: lead
 version:
-  release: 1.0.8
-  api: 1.0.0
+  release: 2.0.0alpha1
+  api: 2.0.0alpha1
 state:
-  release: stable
-  api: stable
+  release: alpha
+  api: alpha
 license:
   identifier: LGPL-2.1
   uri: http://www.horde.org/licenses/lgpl21
