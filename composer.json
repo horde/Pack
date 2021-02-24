@@ -21,12 +21,12 @@
     ],
     "require": {
         "horde/horde-installer-plugin": "*",
-        "php": "^5.3 || ^7",
-        "horde/compress_fast": "^1",
-        "horde/exception": "^2"
+        "php": "^7",
+        "horde/compress_fast": "^2",
+        "horde/exception": "^3"
     },
     "suggest": {
-        "horde/test": "^2",
+        "horde/test": "^3",
         "ext-igbinary": "^1.2",
         "ext-msgpack": "*",
         "ext-json": "*"
