@@ -11,6 +11,10 @@
  * @package    Pack
  * @subpackage UnitTests
  */
+namespace Horde\Pack;
+use Horde_Test_Case;
+use \stdClass;
+use \Horde_Pack_Autodetermine;
 
 /**
  * Test for the Autodetermine object.
@@ -23,11 +27,11 @@
  * @package    Pack
  * @subpackage UnitTests
  */
-class Horde_Pack_AutodetermineTest extends Horde_Test_Case
+class AutodetermineTest extends Horde_Test_Case
 {
     private $types;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->types = array(
             true,

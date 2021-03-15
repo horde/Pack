@@ -11,6 +11,9 @@
  * @package    Pack
  * @subpackage UnitTests
  */
+namespace Horde\Pack;
+use Horde_Test_Case;
+use \Horde_Pack;
 
 /**
  * Test for the base Horde_Pack object.
@@ -23,13 +26,14 @@
  * @package    Pack
  * @subpackage UnitTests
  */
-class Horde_Pack_PackTest extends Horde_Test_Case
+class PackTest extends Horde_Test_Case
 {
     /**
      * @expectedException LogicException
      */
     public function testExpectedExceptionOnSerialize()
     {
+        $this->expectException('LogicException');
         $pack = new Horde_Pack();
         serialize($pack);
     }

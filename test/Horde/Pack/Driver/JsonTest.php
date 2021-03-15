@@ -11,6 +11,9 @@
  * @package    Pack
  * @subpackage UnitTests
  */
+namespace Horde\Pack;
+use \Driver;
+use Horde_Pack_Driver_TestBase as TestBase;
 
 /**
  * Test for the JSON driver.
@@ -23,7 +26,7 @@
  * @package    Pack
  * @subpackage UnitTests
  */
-class Horde_Pack_Driver_JsonTest extends Horde_Pack_Driver_TestBase
+class JsonTest extends TestBase
 {
     protected $drivername = 'Horde_Pack_Driver_Json';
 
@@ -33,6 +36,7 @@ class Horde_Pack_Driver_JsonTest extends Horde_Pack_Driver_TestBase
      */
     public function testInvalidUtf8()
     {
+        $this->expectException('Horde_Pack_Exception');
         $this->_runTest(chr(228));
     }
 }

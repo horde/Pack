@@ -11,6 +11,9 @@
  * @package    Pack
  * @subpackage UnitTests
  */
+namespace Horde\Pack;
+use \Driver;
+use Horde_Pack_Driver_TestBase as TestBase;
 
 /**
  * Test for the Igbinary driver.
@@ -23,7 +26,7 @@
  * @package    Pack
  * @subpackage UnitTests
  */
-class Horde_Pack_Driver_IgbinaryTest extends Horde_Pack_Driver_TestBase
+class IgbinaryTest extends TestBase
 {
     protected $drivername = 'Horde_Pack_Driver_Igbinary';
 }
