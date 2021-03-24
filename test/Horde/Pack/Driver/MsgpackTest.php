@@ -11,9 +11,7 @@
  * @package    Pack
  * @subpackage UnitTests
  */
-namespace Horde\Pack;
-use \Driver;
-use Horde_Pack_Driver_TestBase as TestBase;
+namespace Horde\Pack\Driver;
 
 /**
  * Test for the Messagepack (non-serialized methods) driver.

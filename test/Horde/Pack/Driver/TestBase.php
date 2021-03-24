@@ -11,6 +11,11 @@
  * @package    Pack
  * @subpackage UnitTests
  */
+namespace Horde\Pack\Driver;
+use Horde_Test_Case as TestCase;
+use \Horde_Pack;
+use \Horde_Pack_Autodetermine;
+use \stdClass;
 
 /**
  * Tests for the drivers.
@@ -23,7 +28,7 @@
  * @package    Pack
  * @subpackage UnitTests
  */
-abstract class Horde_Pack_Driver_TestBase extends Horde_Test_Case
+abstract class TestBase extends TestCase
 {
     protected static $pack;
     protected static $sampleob;
