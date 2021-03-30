@@ -11,6 +11,7 @@
  * @package    Pack
  * @subpackage UnitTests
  */
+namespace Horde\Pack\Driver;
 
 /**
  * Test for the Messagepack (serialized methods) driver.
@@ -23,8 +24,7 @@
  * @package    Pack
  * @subpackage UnitTests
  */
-class Horde_Pack_Driver_MsgpackserializeTest
-extends Horde_Pack_Driver_TestBase
+class MsgpackserializeTest extends TestBase
 {
     protected $drivername = 'Horde_Pack_Driver_Msgpackserialize';
 }
