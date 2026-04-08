@@ -36,3 +36,7 @@ dependencies:
       igbinary: ^1.2
       msgpack: '*'
       json: '*'
+keywords:
+  - serialization
+  - fast_compression
+vendor: horde
