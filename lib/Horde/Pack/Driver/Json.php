@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2013-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2013-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -50,7 +51,7 @@ class Horde_Pack_Driver_Json extends Horde_Pack_Driver
         }
 
         if (is_null($jsonc_bug)) {
-            $orig = array("A\0B" => "A\0B");
+            $orig = ["A\0B" => "A\0B"];
             $jsonc_bug = (json_decode(json_encode($orig), true) !== $orig);
         }
 

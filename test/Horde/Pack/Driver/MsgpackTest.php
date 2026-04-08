@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2013-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2013-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -11,6 +12,7 @@
  * @package    Pack
  * @subpackage UnitTests
  */
+
 namespace Horde\Pack\Driver;
 
 /**
@@ -23,6 +25,7 @@ namespace Horde\Pack\Driver;
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  * @package    Pack
  * @subpackage UnitTests
+ * @coversNothing
  */
 class MsgpackTest extends TestBase
 {

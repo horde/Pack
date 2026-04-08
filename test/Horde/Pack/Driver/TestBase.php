@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2013-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2013-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -11,11 +12,13 @@
  * @package    Pack
  * @subpackage UnitTests
  */
+
 namespace Horde\Pack\Driver;
+
 use Horde_Test_Case as TestCase;
-use \Horde_Pack;
-use \Horde_Pack_Autodetermine;
-use \stdClass;
+use Horde_Pack;
+use Horde_Pack_Autodetermine;
+use stdClass;
 
 /**
  * Tests for the drivers.
@@ -43,7 +46,7 @@ abstract class TestBase extends TestCase
 
     protected function setUp(): void
     {
-        if (!call_user_func(array($this->drivername, 'supported'))) {
+        if (!call_user_func([$this->drivername, 'supported'])) {
             $this->markTestSkipped(
                 sprintf('Driver %s is not available.', $this->drivername)
             );
@@ -84,39 +87,39 @@ abstract class TestBase extends TestCase
 
     public function testSimpleArray()
     {
-        $this->_runTest(array());
+        $this->_runTest([]);
         $this->_runTest(range(1, 1000));
     }
 
     public function testSimpleArrayWithCompression()
     {
-        $this->_runTest(array(), true);
+        $this->_runTest([], true);
         $this->_runTest(range(1, 1000), true);
     }
 
     public function testNestedArray()
     {
-        $tmp = array(
+        $tmp = [
             '1' => 'foo',
-            'bar' => 'baz'
-        );
+            'bar' => 'baz',
+        ];
         $this->_runTest(array_fill(0, 1, $tmp));
     }
 
     public function testNestedArrayWithCompression()
     {
-        $tmp = array(
+        $tmp = [
             '1' => 'foo',
-            'bar' => 'baz'
-        );
+            'bar' => 'baz',
+        ];
         $this->_runTest(array_fill(0, 1, $tmp), true);
     }
 
     public function testObject()
     {
-        $ob = new stdClass;
+        $ob = new stdClass();
         $ob->foo = 'bar';
-        $ob->foo2 = array(1, 2, 3);
+        $ob->foo2 = [1, 2, 3];
         $ob->foo3 = 4;
         $ob->foo4 = true;
         $ob->foo5 = null;
@@ -125,9 +128,9 @@ abstract class TestBase extends TestCase
 
     public function testObjectWithCompression()
     {
-        $ob = new stdClass;
+        $ob = new stdClass();
         $ob->foo = 'bar';
-        $ob->foo2 = array(1, 2, 3);
+        $ob->foo2 = [1, 2, 3];
         $ob->foo3 = 4;
         $ob->foo4 = true;
         $ob->foo5 = null;
@@ -187,12 +190,12 @@ abstract class TestBase extends TestCase
     {
         return self::$pack->pack(
             $data,
-            array(
+            [
                 'compress' => $compress ? 0 : false,
-                'drivers' => array(
-                    $this->drivername
-                )
-            )
+                'drivers' => [
+                    $this->drivername,
+                ],
+            ]
         );
     }
 

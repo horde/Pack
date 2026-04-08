@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2013-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2013-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -11,10 +12,12 @@
  * @package    Pack
  * @subpackage UnitTests
  */
+
 namespace Horde\Pack;
+
 use Horde_Test_Case;
-use \stdClass;
-use \Horde_Pack_Autodetermine;
+use stdClass;
+use Horde_Pack_Autodetermine;
 
 /**
  * Test for the Autodetermine object.
@@ -26,6 +29,7 @@ use \Horde_Pack_Autodetermine;
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  * @package    Pack
  * @subpackage UnitTests
+ * @coversNothing
  */
 class AutodetermineTest extends Horde_Test_Case
 {
@@ -33,15 +37,15 @@ class AutodetermineTest extends Horde_Test_Case
 
     public function setUp(): void
     {
-        $this->types = array(
+        $this->types = [
             true,
             1,
             1.234,
             'foo',
             null,
-            array(),
-            new stdClass
-        );
+            [],
+            new stdClass(),
+        ];
     }
 
     public function testNegativeResults()
@@ -56,15 +60,15 @@ class AutodetermineTest extends Horde_Test_Case
     public function testPositiveResults()
     {
         $this->_runTest($this, true);
-        $this->_runTest(array_merge($this->types, array($this)), true);
+        $this->_runTest(array_merge($this->types, [$this]), true);
 
-        $a = new stdClass;
+        $a = new stdClass();
         $a->a = $this;
-        $b = new stdClass;
-        $b->b = array($a);
-        $c = new stdClass;
-        $c->c = array($b);
-        $this->_runTest(array($c), true);
+        $b = new stdClass();
+        $b->b = [$a];
+        $c = new stdClass();
+        $c->c = [$b];
+        $this->_runTest([$c], true);
     }
 
     protected function _runTest($data, $expected)

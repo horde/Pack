@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2013-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2013-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -11,9 +12,11 @@
  * @package    Pack
  * @subpackage UnitTests
  */
+
 namespace Horde\Pack;
+
 use Horde_Test_Case;
-use \Horde_Pack;
+use Horde_Pack;
 
 /**
  * Test for the base Horde_Pack object.
@@ -25,6 +28,7 @@ use \Horde_Pack;
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  * @package    Pack
  * @subpackage UnitTests
+ * @coversNothing
  */
 class PackTest extends Horde_Test_Case
 {
@@ -45,12 +49,12 @@ class PackTest extends Horde_Test_Case
     {
         $pack = new Horde_Pack();
 
-        $p = $pack->pack($data, array(
-            'drivers' => array(
+        $p = $pack->pack($data, [
+            'drivers' => [
                 'Horde_Pack_Driver_Json',
-                'Horde_Pack_Driver_Serialize'
-            )
-        ));
+                'Horde_Pack_Driver_Serialize',
+            ],
+        ]);
 
         $this->assertEquals(
             $data,
@@ -60,13 +64,13 @@ class PackTest extends Horde_Test_Case
 
     public function buggyDriverBackendsProvider()
     {
-        return array(
+        return [
             // Bug #13275
             // ISO-8859-1 string
-            array(base64_decode('VORzdA==')),
+            [base64_decode('VORzdA==')],
             // JSON-C does not correctly handle null characters
-            array(array("A\0B" => "A\0B"))
-        );
+            [["A\0B" => "A\0B"]],
+        ];
     }
 
 }

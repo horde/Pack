@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2013-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2013-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -24,10 +25,10 @@
 class Horde_Pack
 {
     /* Default compress length (in bytes). */
-    const DEFAULT_COMPRESS = 128;
+    public const DEFAULT_COMPRESS = 128;
 
     /* Mask for compressed data. */
-    const COMPRESS_MASK = 64;
+    public const COMPRESS_MASK = 64;
 
     /**
      * Instance of Horde_Compress_Fast shared between all instances.
@@ -41,7 +42,7 @@ class Horde_Pack
      *
      * @var array
      */
-    protected static $_drivers = array();
+    protected static $_drivers = [];
 
     /**
      * Constructor.
@@ -97,11 +98,11 @@ class Horde_Pack
      * @return string  The packed string.
      * @throws Horde_Pack_Exception
      */
-    public function pack($data, array $opts = array())
+    public function pack($data, array $opts = [])
     {
-        $opts = array_merge(array(
-            'compress' => true
-        ), $opts);
+        $opts = array_merge([
+            'compress' => true,
+        ], $opts);
 
         if (!isset($opts['phpob'])) {
             $auto = new Horde_Pack_Autodetermine($data);

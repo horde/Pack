@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2013-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2013-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -55,11 +56,11 @@ abstract class Horde_Pack_Driver
     public function __get($name)
     {
         switch ($name) {
-        case 'id':
-            return $this->_id;
+            case 'id':
+                return $this->_id;
 
-        case 'phpob':
-            return $this->_phpob;
+            case 'phpob':
+                return $this->_phpob;
         }
     }
 

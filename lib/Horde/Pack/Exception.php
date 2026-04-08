@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2013-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2013-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -20,6 +21,4 @@
  * @license   http://www.horde.org/licenses/lgpl21 LGPL 2.1
  * @package   Pack
  */
-class Horde_Pack_Exception extends Horde_Exception_Wrapped
-{
-}
+class Horde_Pack_Exception extends Horde_Exception_Wrapped {}
