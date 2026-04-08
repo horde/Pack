@@ -7,6 +7,7 @@ description: >-
   use the most efficient serialization available based on the input.
 list: dev
 type: library
+homepage: https://www.horde.org/libraries/Horde_Pack
 authors:
   -
     name: Michael Slusarz
@@ -15,10 +16,10 @@ authors:
     active: false
     role: lead
 version:
-  release: 2.0.0alpha5
+  release: 2.0.0-beta1
   api: 2.0.0alpha1
 state:
-  release: alpha
+  release: beta
   api: alpha
 license:
   identifier: LGPL-2.1-only
@@ -30,12 +31,16 @@ dependencies:
       horde/compress_fast: ^2
       horde/exception: ^3
   optional:
-    composer:
-      horde/test: ^3
     ext:
       igbinary: ^1.2
       msgpack: '*'
       json: '*'
+  dev:
+    composer:
+      horde/test: ^3
+autoload:
+  psr-0:
+    Horde_Pack: lib/
 keywords:
   - serialization
   - fast_compression

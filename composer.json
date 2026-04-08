@@ -1,9 +1,8 @@
 {
-    "minimum-stability": "dev",
     "name": "horde/pack",
     "description": "Data packing library",
     "type": "library",
-    "homepage": "https://www.horde.org",
+    "homepage": "https://www.horde.org/libraries/Horde_Pack",
     "license": "LGPL-2.1-only",
     "authors": [
         {
@@ -12,21 +11,21 @@
             "role": "lead"
         }
     ],
-    "time": "2022-11-04",
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://horde-satis.maintaina.com"
-        }
+    "keywords": [
+        "serialization",
+        "fast_compression"
     ],
+    "time": "2026-04-08",
+    "repositories": [],
     "require": {
         "php": "^7.4 || ^8",
         "horde/compress_fast": "^2 || dev-FRAMEWORK_6_0",
         "horde/exception": "^3 || dev-FRAMEWORK_6_0"
     },
-    "require-dev": {},
+    "require-dev": {
+        "horde/test": "^3 || dev-FRAMEWORK_6_0"
+    },
     "suggest": {
-        "horde/test": "^3 || dev-FRAMEWORK_6_0",
         "ext-igbinary": "^1.2",
         "ext-msgpack": "*",
         "ext-json": "*"
@@ -42,8 +41,11 @@
         }
     },
     "config": {
-        "allow-plugins": {
-            "horde/horde-installer-plugin": true
+        "allow-plugins": {}
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-FRAMEWORK_6_0": "2.x-dev"
         }
     }
 }

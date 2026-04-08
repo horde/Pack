@@ -9,7 +9,6 @@
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
   notes: |+
-    
 2.0.0alpha4:
   api: 2.0.0alpha1
   state:
@@ -52,6 +51,28 @@
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
   notes: ~
+2.0.0-beta1:
+  api: 2.0.0-beta1
+  state:
+    release: beta
+    api: beta
+  date: 2026-04-08
+  license:
+    identifier: LGPL-2.1-only
+    uri: https://spdx.org/licenses/LGPL-2.1-only.html
+  notes: |-
+    test: Modernize test suite
+    fix: Temporarily replace error handler instead of silencing
+    chore: metadata
+    style: php-cs-fixer
+    Update ci.yml
+    Development mode for Pack-2.0.0alpha5
+    Released Pack-2.0.0alpha4
+    Update metadata and workflows for PHP 8 support
+    Add CI job for satis repo update
+    no errors, ci.yml added, bootstrap adjusted
+    no errors left
+    Development mode for Pack-2.0.0alpha5
 1.0.7:
   api: 1.0.0
   state:
