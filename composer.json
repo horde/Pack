@@ -15,15 +15,15 @@
         "serialization",
         "fast_compression"
     ],
-    "time": "2026-04-08",
+    "time": "2026-06-10",
     "repositories": [],
     "require": {
-        "php": "^7.4 || ^8",
-        "horde/compress_fast": "^2 || dev-FRAMEWORK_6_0",
-        "horde/exception": "^3 || dev-FRAMEWORK_6_0"
+        "php": "^8.1",
+        "horde/compress_fast": "^2",
+        "horde/exception": "^3"
     },
     "require-dev": {
-        "horde/test": "^3 || dev-FRAMEWORK_6_0"
+        "horde/test": "^3"
     },
     "suggest": {
         "ext-igbinary": "^1.2",
@@ -33,6 +33,9 @@
     "autoload": {
         "psr-0": {
             "Horde_Pack": "lib/"
+        },
+        "psr-4": {
+            "Horde\\Pack\\": "src/"
         }
     },
     "autoload-dev": {
@@ -43,9 +46,5 @@
     "config": {
         "allow-plugins": {}
     },
-    "extra": {
-        "branch-alias": {
-            "dev-FRAMEWORK_6_0": "2.x-dev"
-        }
-    }
+    "minimum-stability": "dev"
 }
