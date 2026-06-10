@@ -10,17 +10,22 @@
          failOnWarning="true"
          displayDetailsOnTestsThatTriggerWarnings="true"
          displayDetailsOnTestsThatTriggerErrors="true"
+         displayDetailsOnTestsThatTriggerDeprecations="true"
          colors="true">
 
     <testsuites>
         <testsuite name="unit">
             <directory>test/Unit</directory>
         </testsuite>
+        <testsuite name="modern">
+            <directory>test/Modern</directory>
+        </testsuite>
     </testsuites>
 
     <source>
         <include>
             <directory suffix=".php">lib</directory>
+            <directory suffix=".php">src</directory>
         </include>
     </source>
 </phpunit>
