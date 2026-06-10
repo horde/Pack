@@ -19,11 +19,11 @@
     "repositories": [],
     "require": {
         "php": "^8.1",
-        "horde/compress_fast": "^2",
-        "horde/exception": "^3"
+        "horde/compress_fast": "^2 || dev-FRAMEWORK_6_0",
+        "horde/exception": "^3 || dev-FRAMEWORK_6_0"
     },
     "require-dev": {
-        "horde/test": "^3"
+        "horde/test": "^3 || dev-FRAMEWORK_6_0"
     },
     "suggest": {
         "ext-igbinary": "^1.2",
@@ -46,5 +46,9 @@
     "config": {
         "allow-plugins": {}
     },
-    "minimum-stability": "dev"
+    "extra": {
+        "branch-alias": {
+            "dev-FRAMEWORK_6_0": "2.x-dev"
+        }
+    }
 }
