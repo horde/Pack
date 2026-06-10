@@ -1,4 +1,40 @@
 ---
+2.0.0beta1:
+  api: 2.0.0alpha1
+  state:
+    release: beta
+    api: alpha
+  date: 2026-06-10
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    Modernization release. Adds a parallel PSR-4 implementation under
+    Horde\Pack\ in src/, alongside the existing PSR-0 Horde_Pack code in
+    lib/. Both implementations cohabit in the same package and produce
+    identical wire-format output - values packed by either class unpack
+    under the other.
+
+    New public API (Horde\Pack\): Packer (replaces Horde_Pack), Driver
+    interface (replaces Horde_Pack_Driver abstract class), Driver\*
+    classes for each shipped backend, PackOptions value object (replaces
+    the untyped $opts array), DriverRegistry interface and
+    DefaultDriverRegistry (replace the constructor-side
+    FilesystemIterator discovery), Compressor interface and
+    DefaultCompressor (wrap horde/compress_fast behind a local
+    abstraction), WireFormat constants (formalize the on-disk header
+    layout), PackException (extends Horde\Exception\HordeRuntimeException).
+
+    PHP 8.1 minimum. New code uses readonly typed properties, real
+    parameter and return types, JSON_THROW_ON_ERROR, and unserialize
+    allowed_classes as a first-class option.
+
+    Wire format is documented in doc/wire-format.md. Migration guide is
+    in doc/UPGRADING.md.
+
+    The legacy Horde_Pack code in lib/ is unchanged. In-tree callers
+    (horde/Core, horde/imp, horde/Imap_Client) continue to use it; any
+    sweep onto Horde\Pack\Packer is a separate follow-up effort.
 2.0.0alpha5:
   api: 2.0.0alpha1
   state:
