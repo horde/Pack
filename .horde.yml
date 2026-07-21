@@ -15,7 +15,7 @@ authors:
     active: false
     role: lead
 version:
-  release: 2.0.0
+  release: 2.0.1
   api: 2.0.0alpha1
 state:
   release: stable
@@ -51,20 +51,22 @@ quality:
     level: 7
 ci-platform:
   '8.1':
-    - php: ^8
+    - php: ^8.1
     - ext-dom
   '8.2':
-    - php: ^8
+    - php: ^8.2
     - ext-dom
   '8.3':
-    - php: ^8
+    - php: ^8.3
     - ext-dom
   '8.4':
-    - php: ^8
+    - php: ^8.4
     - ext-dom
   '8.5':
-    - php: ^8
+    - php: ^8.5
     - ext-dom
   '8.6':
-    - php: ^8
+    - php: ^8.6
     - ext-dom
+ci-platform-flags:
+  needs_installer_plugin: false
