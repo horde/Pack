@@ -45,12 +45,24 @@ class Horde_Pack_Driver_Msgpack extends Horde_Pack_Driver
      */
     public function unpack($data)
     {
+        // Only warnings emitted by the msgpack extension itself count as
+        // an unpack failure. Warnings/notices from an object's __wakeup /
+        // __unserialize must not discard a correctly reconstructed
+        // graph. See {@see Horde_Pack_Driver_Igbinary::unpack()} for the
+        // full rationale.
         $error = false;
-        set_error_handler(function () use (&$error) {
-            $error = true;
+        set_error_handler(function ($errno, $errstr) use (&$error) {
+            if (str_starts_with((string) $errstr, '[msgpack]')) {
+                $error = true;
+                return true;
+            }
+            return false;
         });
-        $out = msgpack_unpack($data);
-        restore_error_handler();
+        try {
+            $out = msgpack_unpack($data);
+        } finally {
+            restore_error_handler();
+        }
 
         if (!$error) {
             return $out;

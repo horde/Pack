@@ -14,6 +14,8 @@ declare(strict_types=1);
 
 namespace Horde\Pack\Test\Unit\Driver;
 
+use Horde\Pack\Test\Unit\Driver\Fixture\WakeupNotices;
+use Horde\Pack\Test\Unit\Driver\Fixture\WakeupWarns;
 use Horde_Pack;
 use Horde_Pack_Autodetermine;
 use Horde_Pack_Exception;
@@ -149,6 +151,56 @@ abstract class TestBase extends TestCase
         $this->expectException(Horde_Pack_Exception::class);
         $packed = $this->packData(true, false);
         self::$pack->unpack($packed[0] . "A{{}");
+    }
+
+    /**
+     * A warning emitted from within __wakeup / __unserialize (mirrors
+     * the real IMP_Imap / Horde_Imap_Client_Base failure mode where
+     * @fopen on a non-writable debug path raises E_WARNING during
+     * unpack) must NOT trip the driver's local error handler. Only
+     * warnings from the pack extension itself (identified by their
+     * message prefix) indicate an actual decode failure; user-space
+     * emissions from an object's own wakeup logic are semantically
+     * unrelated.
+     *
+     * Regression cover for the "IMP is marked as authenticated, but no
+     * credentials can be found in the session" symptom traced back to
+     * horde/pack v2.0.0 discarding valid unpacked objects on any
+     * warning during unpack.
+     */
+    public function testUserWarningDuringWakeupDoesNotFailUnpack(): void
+    {
+        $driver = new $this->drivername();
+        if (!$driver->phpob) {
+            $this->markTestSkipped('Driver does not support PHP objects.');
+        }
+        $ob = new WakeupWarns();
+        $this->runPackUnpack($ob);
+    }
+
+    /**
+     * A plain E_USER_NOTICE from within __wakeup / __unserialize must
+     * not discard a correctly reconstructed object either — notices
+     * are a routine emission from legacy object graphs and are
+     * semantically unrelated to whether the payload decoded.
+     */
+    public function testUserNoticeDuringWakeupDoesNotFailUnpack(): void
+    {
+        $driver = new $this->drivername();
+        if (!$driver->phpob) {
+            $this->markTestSkipped('Driver does not support PHP objects.');
+        }
+        $ob = new WakeupNotices();
+        // Silence the notice at the phpunit level so the test framework
+        // doesn't itself convert it to a failure. The invariant under
+        // test is that the driver survives, not that PHP is silent.
+        $previous = error_reporting();
+        error_reporting($previous & ~E_USER_NOTICE);
+        try {
+            $this->runPackUnpack($ob);
+        } finally {
+            error_reporting($previous);
+        }
     }
 
     protected function runPackUnpack(mixed $data, bool $compress = false): void
