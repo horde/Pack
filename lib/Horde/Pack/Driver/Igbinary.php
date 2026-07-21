@@ -49,12 +49,31 @@ class Horde_Pack_Driver_Igbinary extends Horde_Pack_Driver
      */
     public function unpack($data)
     {
+        // Only warnings emitted by the igbinary extension itself count
+        // as an unpack failure. Warnings/notices raised from within an
+        // object's __wakeup / __unserialize (e.g. IMP_Imap re-attaching
+        // its debug fopen resource) are semantically unrelated to
+        // whether the payload decoded, and must not discard a correctly
+        // reconstructed graph. This is the regression pack v2.0.0
+        // shipped when the previous @-suppression idiom was replaced
+        // with a blanket set_error_handler that flipped on ANY warning:
+        // the @ operator no longer zeros error_reporting() on modern
+        // PHP, so error-reporting-based detection isn't reliable
+        // either. Message-prefix matching is what actually
+        // discriminates.
         $error = false;
-        set_error_handler(function () use (&$error) {
-            $error = true;
+        set_error_handler(function ($errno, $errstr) use (&$error) {
+            if (str_starts_with((string) $errstr, 'igbinary_')) {
+                $error = true;
+                return true;
+            }
+            return false;
         });
-        $out = igbinary_unserialize($data);
-        restore_error_handler();
+        try {
+            $out = igbinary_unserialize($data);
+        } finally {
+            restore_error_handler();
+        }
 
         if (!$error && (!is_null($out) || ($data == igbinary_serialize(null)))) {
             return $out;
